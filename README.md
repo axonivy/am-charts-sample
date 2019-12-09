@@ -1,2 +1,2 @@
 # amChartsSample
-An ivy project with some sample dialogs with integrated amsCharts
+An Axon.ivy8.0 project with some sample dialogs with integrated amsCharts
