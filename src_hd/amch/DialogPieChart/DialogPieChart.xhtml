@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition template="/layouts/basic-8.xhtml">
+		<ui:define name="title">DialogWithChart</ui:define>
+		<ui:define name="content">
+
+			<h3>Included amCharts4 diagram</h3>
+			<h:outputScript library="ivy-webcontent" name="js/core.js" />
+			<h:outputScript library="ivy-webcontent" name="js/charts.js" />
+
+			<div id="chartdiv" style="width: 1000px; height: 700px;"></div>
+
+			<script>
+				// Create chart instance
+				var chart = am4core.create("chartdiv", am4charts.PieChart);
+
+				// Create data series
+				var series = chart.series.push(new am4charts.PieSeries());
+				series.dataFields.value = "litres";
+				series.dataFields.category = "country";
+				
+				// load data from json file
+				chart.dataSource.url = "#{resource['js/pie_data.json']}";
+
+				// And, for a good measure, let's add a legend
+				chart.legend = new am4charts.Legend();
+			</script>
+
+
+			<h:form id="form">
+				<p:panelGrid columns="1" layout="grid"
+					styleClass="ui-panelgrid-blank"
+					columnClasses="ui-g-12 ui-md-3 ui-lg-2, 
+						ui-g-12 ui-md-9 ui-lg-4, 
+						ui-g-12 ui-md-3 ui-lg-2, 
+						ui-g-12 ui-md-9 ui-lg-4">
+					<f:facet name="header">
+						<p:messages></p:messages>
+					</f:facet>
+					<p:commandButton actionListener="#{logic.close}" value="Close"
+						update="form" icon="ui-icon-check" />
+				</p:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,8 @@
+DataItem #class
+amch #namespace
+country String #field
+country PERSISTENT #fieldModifier
+litres Double #field
+litres PERSISTENT #fieldModifier
+unit Double #field
+unit PERSISTENT #fieldModifier
