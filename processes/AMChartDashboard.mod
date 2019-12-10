@@ -144,11 +144,11 @@ Ad0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>Demo with amCharts4 Javascript library integrated in JSF Dialogs&#13;
-The data is provided by a REST Service in json and loaded from a json file</name>
+The data is provided by a REST Service in json or loaded from a json file</name>
     </language>
 </elementInfo>
 ' #txt
-Ad0 f15 32 26 416 44 -201 -16 #rect
+Ad0 f15 40 26 400 44 -196 -16 #rect
 Ad0 f15 @|IBIcon #fIcon
 Ad0 f16 outLink start4.ivp #txt
 Ad0 f16 inParamDecl '<> param;' #txt
