@@ -79,7 +79,7 @@ public class DataService {
 	public List<AnimatedDataItem> animatedItems() {
 		List<AnimatedDataItem> result = new ArrayList<AnimatedDataItem>();
 
-		var open = 100;
+		long open = 100;
 		var close = 250;
 
 		for (var i = 1; i <365; i++) {
